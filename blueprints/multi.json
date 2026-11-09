@@ -1,0 +1,44 @@
+{
+  "$schema": "https://playground.wordpress.net/blueprint-schema.json",
+  "meta": {
+    "title": "Tradewell Multi-trade demo",
+    "author": "Tradewell Themes"
+  },
+  "landingPage": "/",
+  "preferredVersions": {
+    "php": "8.3",
+    "wp": "latest"
+  },
+  "steps": [
+    {
+      "step": "installTheme",
+      "themeData": {
+        "resource": "url",
+        "url": "https://raw.githubusercontent.com/ProsperTechnology/tradewell-demo/main/tradewell.zip"
+      },
+      "options": {
+        "activate": true
+      }
+    },
+    {
+      "step": "installPlugin",
+      "pluginData": {
+        "resource": "url",
+        "url": "https://raw.githubusercontent.com/ProsperTechnology/tradewell-demo/main/tradewell-leads.zip"
+      },
+      "options": {
+        "activate": true
+      }
+    },
+    {
+      "step": "setSiteOptions",
+      "options": {
+        "permalink_structure": "/%postname%/"
+      }
+    },
+    {
+      "step": "runPHP",
+      "code": "<?php require '/wordpress/wp-load.php'; delete_transient( 'twleads_activation_redirect' ); twleads_run_setup( 'multi', array( 'business_name' => 'Tradewell Home Services', 'phone' => '(555) 010-0199', 'city' => 'Springfield' ) ); flush_rewrite_rules();"
+    }
+  ]
+}
