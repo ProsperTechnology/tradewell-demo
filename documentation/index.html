@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tradewell Documentation</title>
+<style>
+	:root { --p:#12304f; --a:#f26b1d; --t:#0f1b2a; --m:#4a5868; --b:#dce3ea; --s:#f3f6f9; }
+	* { box-sizing: border-box; }
+	body { margin: 0; font: 16px/1.65 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; color: var(--t); }
+	a { color: var(--p); }
+	nav { position: fixed; inset: 0 auto 0 0; width: 270px; overflow-y: auto; background: var(--p); color: #fff; padding: 28px 22px; }
+	nav strong { display: block; font-size: 22px; margin-bottom: 4px; }
+	nav small { color: #ffffffb3; }
+	nav ol { padding-left: 18px; margin: 22px 0; }
+	nav li { margin: 6px 0; }
+	nav a { color: #fff; text-decoration: none; opacity: .9; }
+	nav a:hover { opacity: 1; text-decoration: underline; }
+	main { margin-left: 270px; padding: 48px 56px 120px; max-width: 980px; }
+	h1 { font-size: 40px; line-height: 1.15; margin: 0 0 8px; letter-spacing: -.02em; }
+	h2 { font-size: 28px; margin: 64px 0 12px; padding-top: 12px; border-top: 1px solid var(--b); letter-spacing: -.01em; }
+	h3 { font-size: 19px; margin: 28px 0 8px; }
+	img { max-width: 100%; border: 1px solid var(--b); border-radius: 10px; box-shadow: 0 6px 20px rgba(15,27,42,.08); margin: 12px 0; }
+	code { background: var(--s); padding: .1em .35em; border-radius: 4px; font-size: .92em; }
+	pre { background: var(--s); border: 1px solid var(--b); border-radius: 8px; padding: 14px 16px; overflow-x: auto; }
+	table { border-collapse: collapse; width: 100%; margin: 12px 0; font-size: 15px; }
+	th, td { border: 1px solid var(--b); padding: 8px 10px; text-align: left; vertical-align: top; }
+	th { background: var(--s); }
+	.lead { font-size: 19px; color: var(--m); }
+	.tip { background: #fff7ed; border-left: 4px solid var(--a); padding: 12px 16px; border-radius: 6px; }
+	.steps li { margin-bottom: 8px; }
+	@media (max-width: 900px) { nav { position: static; width: auto; } main { margin: 0; padding: 28px 20px; } }
+</style>
+</head>
+<body>
+<nav aria-label="Documentation">
+	<strong>Tradewell</strong>
+	<small>Version 2.0.0 Â· Documentation</small>
+	<ol>
+		<li><a href="#start">Getting started</a></li>
+		<li><a href="#install">Install the theme</a></li>
+		<li><a href="#plugin">Install Tradewell Leads</a></li>
+		<li><a href="#wizard">Setup wizard</a></li>
+		<li><a href="#design">Colors, fonts and logo</a></li>
+		<li><a href="#pages">Pages, sections and templates</a></li>
+		<li><a href="#calculator">Quote calculator</a></li>
+		<li><a href="#booking">Booking form</a></li>
+		<li><a href="#areas">Service areas and ZIP checker</a></li>
+		<li><a href="#phone">Phone button and call bar</a></li>
+		<li><a href="#leads">Leads inbox, email and webhook</a></li>
+		<li><a href="#analytics">Conversion tracking</a></li>
+		<li><a href="#seo">SEO and structured data</a></li>
+		<li><a href="#privacy">Privacy</a></li>
+		<li><a href="#child">Child theme</a></li>
+		<li><a href="#translate">Translation</a></li>
+		<li><a href="#faq">Troubleshooting</a></li>
+		<li><a href="#dev">Developer reference</a></li>
+		<li><a href="#credits">Credits and changelog</a></li>
+	</ol>
+</nav>
+<main>
+	<h1>Tradewell documentation</h1>
+<p>Published by <strong>Prosper Technologies</strong>. Version 2.0.1. <a href="https://github.com/ProsperTechnology/tradewell-demo/issues">Product support and issue reports</a>.</p>
+	<p class="lead">Thank you for choosing Tradewell, a lead-generating WordPress theme for HVAC, plumbing, roofing, electrical and solar businesses. This guide takes you from upload to a finished site in about ten minutes.</p>
+	<img src="images/home.png" alt="Tradewell homepage">
+
+	<h2 id="start">1. Getting started</h2>
+	<h3>Requirements</h3>
+	<ul>
+		<li>WordPress 6.6 or newer (tested up to 7.1)</li>
+		<li>PHP 7.4 or newer</li>
+		<li>A host that can send email (or an SMTP plugin, see <a href="#faq">Troubleshooting</a>)</li>
+	</ul>
+	<h3>What is in your download</h3>
+	<table>
+		<tr><th>File</th><th>What it is</th></tr>
+		<tr><td><code>tradewell.zip</code></td><td>The theme. Upload this in WordPress. It recommends Tradewell Leads and offers to download and install it with your permission.</td></tr>
+		<tr><td><code>tradewell-child.zip</code></td><td>Optional child theme for custom code.</td></tr>
+		<tr><td><code>plugins/tradewell-leads.zip</code></td><td>The included plugin ZIP for manual or offline installation.</td></tr>
+		<tr><td><code>documentation/</code></td><td>This guide.</td></tr>
+		<tr><td><code>licensing/</code></td><td>License information for the theme and bundled resources.</td></tr>
+	</table>
+	<p class="tip">Upload <code>tradewell.zip</code>, not the whole download. Uploading the main download file gives a "The package could not be installed" error.</p>
+
+	<h2 id="install">2. Install the theme</h2>
+	<ol class="steps">
+		<li>In WordPress go to <strong>Appearance &rsaquo; Themes &rsaquo; Add New &rsaquo; Upload Theme</strong>.</li>
+		<li>Choose <code>tradewell.zip</code> and click <strong>Install Now</strong>, then <strong>Activate</strong>.</li>
+	</ol>
+
+	<h2 id="plugin">3. Install Tradewell Leads</h2>
+	<p>After activation a notice appears at the top of the dashboard. Click <strong>Begin installing plugin</strong> (or go to <strong>Appearance &rsaquo; Install Plugins</strong>) and install Tradewell Leads. After installation, activate it if WordPress shows an Activate link. The installer requires an internet connection to GitHub. If downloading is blocked, install <code>plugins/tradewell-leads.zip</code> using Plugins &rsaquo; Add New &rsaquo; Upload Plugin.</p>
+	<img src="images/02-install-plugins.png" alt="Install Plugins screen">
+	<p>The plugin adds the quote calculator, booking form, service-area pages, click-to-call bar, leads inbox and setup wizard. The theme works without it; those sections simply do not appear.</p>
+
+	<h2 id="wizard">4. Setup wizard</h2>
+	<p>When the plugin is activated, the setup wizard opens. You can return to it any time at <strong>Leads &rsaquo; Setup wizard</strong>.</p>
+	<img src="images/03-setup-wizard.png" alt="Setup wizard">
+	<ol class="steps">
+		<li><strong>Choose your trade:</strong> Multi-trade, Plumbing, HVAC, Roofing, Electrical or Solar.</li>
+		<li><strong>Enter your business details:</strong> name, phone, the email that should receive leads, and your main city.</li>
+		<li>Click <strong>Build my site</strong>.</li>
+	</ol>
+	<p>The wizard creates and connects:</p>
+	<ul>
+		<li>A homepage with your trade's headline, services, quote calculator, offers, service areas, reviews, plans, FAQ and emergency banner</li>
+		<li>A Services page plus three service pages for your trade, each with its own starting price</li>
+		<li>Maintenance Plans, Financing, About, Book Online, Contact and News pages</li>
+		<li>The main menu, the footer, the color scheme for your trade, calculator prices and booking options</li>
+		<li>Four sample service-area pages</li>
+	</ul>
+	<img src="images/04-setup-done.png" alt="Setup complete">
+	<p class="tip">Back up your site before rebuilding or removing starter content. These actions permanently delete the imported pages, including edits you made to them, and replace the imported navigation and templates. Pages and posts created separately are kept.</p>
+	<p><strong>Before launch:</strong> replace the sample reviews, team members, offers, statistics and service areas with your own. The sample reviews are placeholders and must not be presented as real customer reviews.</p>
+
+	<h2 id="design">5. Colors, fonts and logo</h2>
+	<ul>
+		<li><strong>Color scheme:</strong> Appearance &rsaquo; Editor &rsaquo; Styles. Pick one of six schemes or set your own colors. Illustrations recolor automatically.</li>
+		<li><strong>Logo:</strong> Appearance &rsaquo; Editor &rsaquo; Patterns &rsaquo; Header, select the Site Logo block and upload your logo. Or add it under Settings &rsaquo; General if your WordPress version shows it there.</li>
+		<li><strong>Fonts:</strong> Styles &rsaquo; Typography. Tradewell ships with Archivo (self-hosted, no Google requests).</li>
+	</ul>
+	<p>The color palette uses named roles, so you only need to change a few:</p>
+	<table>
+		<tr><th>Color</th><th>Used for</th></tr>
+		<tr><td>Primary / Primary dark</td><td>Hero, page headers, icons, footer</td></tr>
+		<tr><td>Accent / Text on accent</td><td>Buttons, coupons, emergency banner. Keep these two readable together.</td></tr>
+		<tr><td>Accent text</td><td>Small labels on white backgrounds</td></tr>
+		<tr><td>Highlight on dark</td><td>Small labels and numbers on dark backgrounds</td></tr>
+	</table>
+
+	<h2 id="pages">6. Pages, sections and templates</h2>
+<p>Edit imported homepage sections under <strong>Pages &rsaquo; Home &rsaquo; Edit</strong>. Edit the header, footer and global styles in <strong>Appearance &rsaquo; Editor</strong>. Without an import, the theme uses WordPress's normal latest-posts view and honours Settings &rsaquo; Reading.</p>
+	<p>Every section is a block pattern. In any page click <strong>+ &rsaquo; Patterns &rsaquo; Tradewell</strong> (or <strong>Lead capture</strong>) to add one.</p>
+	<table>
+		<tr><th>Theme patterns</th><th>Plugin patterns</th></tr>
+		<tr><td>Hero with illustration, Trust bar, Services grid, Special offers (coupons), How it works, Stats band, Maintenance plans, Financing, Customer reviews, Team, About: our story, Service detail, Contact details, FAQ, Emergency call to action</td><td>Quote calculator section, Booking section, Service area section</td></tr>
+	</table>
+	<h3>Page templates</h3>
+	<ul>
+		<li><strong>Default:</strong> page header and content area</li>
+		<li><strong>Full-width page:</strong> page header, then edge-to-edge sections (used by the wizard)</li>
+		<li><strong>Landing page:</strong> no navigation, just logo, phone and content, for ad campaigns</li>
+	</ul>
+	<p>The text under a page title comes from the page excerpt (Page settings &rsaquo; Excerpt).</p>
+
+	<h2 id="calculator">7. Quote calculator</h2>
+	<img src="images/c-quote.png" alt="Quote calculator" style="max-width:560px">
+	<p>Visitors pick a service, optionally set a size and urgency, and see a price range. To request a follow-up they leave their name and phone, which creates a lead. The estimate is indicative, not a binding quotation. Your team must confirm scope, availability and final pricing.</p>
+	<img src="images/06-editor-calculator.png" alt="Calculator settings in the editor">
+	<h3>How prices are calculated</h3>
+	<pre>price = (base price + size Ã— price per unit) Ã— urgency
+range = price âˆ’ spread %  to  price + spread %   (rounded to friendly numbers)</pre>
+	<ul>
+		<li><strong>Flat-price services:</strong> leave "Size unit" empty. Only the base price is used.</li>
+		<li><strong>Size-based services:</strong> set a unit (sq ft, tons, kW, fixtures), price per unit, minimum, maximum, step and starting size. A slider appears.</li>
+		<li><strong>Urgency:</strong> "Next day" adds 10%, "Emergency" adds 25%. Turn this off with "Ask how soon".</li>
+		<li><strong>Range spread:</strong> how wide the range is (default Â±15%).</li>
+	</ul>
+	<p>The estimate shown to the visitor is saved with the lead so your team knows what they expect.</p>
+
+	<h2 id="booking">8. Booking form</h2>
+	<img src="images/c-booking.png" alt="Booking form" style="max-width:560px">
+	<p>Customers choose a service, a day and an arrival window. In the block sidebar set the services and windows (one per line), how many days to offer and which days you are closed. Bookings are requests: confirm them by phone or text.</p>
+
+	<h2 id="areas">9. Service areas and ZIP checker</h2>
+	<img src="images/c-area.png" alt="ZIP checker" style="max-width:560px">
+	<ul>
+		<li>Add a page per town at <strong>Leads &rsaquo; Service areas &rsaquo; Add service area</strong>. Enter the ZIP codes it covers in the "ZIP codes covered" box.</li>
+		<li>The pages appear at <code>/service-areas/</code> and in the Service area list block.</li>
+		<li>Extra ZIP codes without their own page go in <strong>Leads &rsaquo; Settings &rsaquo; Service area</strong>.</li>
+		<li>When a ZIP is not covered, the checker shows a short "call me" form so you still capture the lead.</li>
+	</ul>
+
+	<h2 id="phone">10. Phone button and click-to-call bar</h2>
+	<p>Set your number once in <strong>Leads &rsaquo; Settings</strong>. It updates the header, footer, buttons and the mobile call bar everywhere. The call bar shows on phones only; turn it off or change where "Free quote" links in the same settings screen.</p>
+
+	<h2 id="leads">11. Leads inbox, email and webhook</h2>
+	<img src="images/07-leads-inbox.png" alt="Leads inbox">
+	<ul>
+		<li>Every submission is saved under <strong>Leads</strong> and emailed to the address in settings. The email's Reply-To is the customer.</li>
+		<li>Track each lead as New, Contacted, Booked, Won or Lost. The menu shows how many are new.</li>
+		<li><strong>Export CSV</strong> downloads all leads for your spreadsheet or CRM.</li>
+		<li><strong>Webhook:</strong> paste a Zapier, Make or CRM webhook URL in settings and each lead is sent there as JSON.</li>
+	</ul>
+	<img src="images/05-settings.png" alt="Leads settings">
+	<h3>Spam protection</h3>
+	<p>Forms use a hidden honeypot field, a signed time check (submissions faster than 3 seconds are rejected) and a limit of 6 submissions per visitor per 10 minutes. No CAPTCHA is bundled. Set your page cache lifetime below 14 days because signed form tokens expire; reload a page if a token has expired. Add a host-level anti-spam service if your site receives sustained abuse.</p>
+
+	<h2 id="analytics">12. Conversion tracking</h2>
+<p>No analytics service is bundled. If you connect a tag manager or advertising service, configure visitor consent and disclosures before enabling that service. Do not add names, phone numbers, email addresses, street addresses or other personal information to analytics payloads.</p>
+	<p>If Google Tag Manager is installed, these events are pushed to <code>dataLayer</code>. Use them as triggers for Google Ads, GA4 or Meta conversions.</p>
+	<table>
+		<tr><th>Event</th><th>When</th><th>Data</th></tr>
+		<tr><td><code>tradewell_lead</code></td><td>Any form submitted successfully</td><td><code>lead_type</code>, <code>service</code>, <code>value</code> (top of estimate)</td></tr>
+		<tr><td><code>tradewell_call</code></td><td>A phone link is tapped</td><td><code>from</code></td></tr>
+		<tr><td><code>tradewell_quote_step</code></td><td>Visitor requests an estimate</td><td><code>service</code></td></tr>
+		<tr><td><code>tradewell_area_check</code></td><td>ZIP checked</td><td><code>served</code> only; the ZIP is not included in analytics events</td></tr>
+	</table>
+
+	<h2 id="seo">13. SEO and structured data</h2>
+	<p>Tradewell Leads adds LocalBusiness (HomeAndConstructionBusiness) structured data to the homepage and service-area pages, using the details in Leads &rsaquo; Settings. If your SEO plugin already outputs business markup, turn ours off:</p>
+	<pre>add_filter( 'twleads_output_schema', '__return_false' );</pre>
+	<p>Use an SEO plugin of your choice for titles and meta descriptions.</p>
+
+	<h2 id="privacy">14. Privacy</h2>
+<p>The leads inbox and CSV export are restricted to administrators. Configure a retention policy and remove leads when no longer needed. Do not paste customer details into public support issues. The plugin does not send telemetry to Prosper Technologies.</p>
+	<p>Leads contain personal data. Tradewell Leads registers with WordPress's privacy tools (Tools &rsaquo; Export / Erase Personal Data) and suggests text for your privacy policy (Settings &rsaquo; Privacy). Edit the consent line under forms in Leads &rsaquo; Settings.</p>
+
+	<h2 id="child">15. Child theme</h2>
+	<p>If you plan to add custom code, install <code>tradewell-child.zip</code> and activate it instead of Tradewell (both must be installed). Put CSS in the child's <code>style.css</code> and PHP in its <code>functions.php</code>. Changes made in the Site Editor are stored in the database and survive updates without a child theme.</p>
+
+	<h2 id="translate">16. Translation</h2>
+	<p>Both the theme and plugin are translation ready. Template files are in <code>tradewell/languages/tradewell.pot</code> and <code>tradewell-leads/languages/tradewell-leads.pot</code>. Use Loco Translate or Poedit.</p>
+	<p>The wizard fills in trade-specific text in the site's language when translations exist; otherwise it uses English.</p>
+
+	<h2 id="faq">17. Troubleshooting</h2>
+	<h3>Lead emails are not arriving</h3>
+	<p>Many hosts block PHP mail. Install an SMTP plugin (for example WP Mail SMTP) and connect it to your email provider. Successfully accepted submissions are saved in the inbox independently of email delivery. Test delivery before launch and monitor your mail provider.</p>
+	<h3>"The package could not be installed. The theme is missing the style.css stylesheet."</h3>
+	<p>You uploaded the full download. Unzip it and upload <code>tradewell.zip</code>.</p>
+	<h3>/service-areas/ shows a 404</h3>
+	<p>Go to Settings &rsaquo; Permalinks and click Save once.</p>
+	<h3>The menu shows "Sample Page"</h3>
+	<p>Run the setup wizard, or edit the navigation block in Appearance &rsaquo; Editor &rsaquo; Navigation.</p>
+	<h3>"Too many requests" when testing forms</h3>
+	<p>The spam limit allows 6 submissions per 10 minutes per visitor. Wait 10 minutes, or raise it while testing with <code>add_filter( 'twleads_rate_limit', fn() =&gt; 50 );</code></p>
+
+	<h2 id="dev">18. Developer reference</h2>
+	<table>
+		<tr><th>Hook</th><th>Type</th><th>Use</th></tr>
+		<tr><td><code>twleads_lead_created</code></td><td>action</td><td>Runs after a lead is stored. Receives <code>$lead_id, $data</code>.</td></tr>
+		<tr><td><code>twleads_lead_errors</code></td><td>filter</td><td>Add or remove validation errors.</td></tr>
+		<tr><td><code>twleads_webhook_payload</code></td><td>filter</td><td>Change the JSON sent to your webhook.</td></tr>
+		<tr><td><code>twleads_rate_limit</code></td><td>filter</td><td>Submissions allowed per visitor per 10 minutes (default 6).</td></tr>
+		<tr><td><code>twleads_show_callbar</code></td><td>filter</td><td>Hide the call bar on specific pages.</td></tr>
+		<tr><td><code>twleads_schema</code> / <code>twleads_output_schema</code></td><td>filter</td><td>Edit or disable structured data.</td></tr>
+		<tr><td><code>tradewell_disable_emoji</code></td><td>filter</td><td>Return false to restore WordPress's emoji script.</td></tr>
+	</table>
+	<p>REST endpoints: <code>POST /wp-json/twl/v1/leads</code> and <code>GET /wp-json/twl/v1/areas?zip=</code>.</p>
+
+	<h2 id="credits">19. Credits and changelog</h2>
+<p>Theme and plugin code, CSS, icons and illustrations are GPL v2 or later. The bundled Archivo font retains its SIL Open Font License. Third-party copyright and license notices are included in the download.</p>
+	<ul>
+		<li>Archivo font, SIL Open Font License 1.1, The Archivo Project Authors</li>
+		<li>TGM Plugin Activation, GPLv2 or later, Thomas Griffin, Gary Jones, Juliette Reinders Folmer</li>
+		<li>Icons and illustrations: original artwork, GPLv2 or later</li>
+	</ul>
+	<h3>2.0.1</h3>
+<ul><li>Prosper Technologies branding and consistent GPL licensing.</li><li>Refined responsive hero, service labels and mobile navigation spacing.</li><li>Fixed parent stylesheet loading in the child theme and quote links on subdirectory installations.</li><li>Strengthened lead permissions, malformed-input handling, booking dates, webhook requests and privacy pagination.</li><li>Updated translation catalogs and documentation.</li></ul>
+<h3>2.0.0</h3>
+	<ul>
+		<li>Setup wizard with six trade starter sites</li>
+		<li>Original illustrations that recolor with each scheme</li>
+		<li>New patterns: offers, plans, stats, financing, team, about, service detail, contact details, page header</li>
+		<li>Bundled plugin installer</li>
+		<li>Accessibility, HTML validity and coding-standard improvements</li>
+	</ul>
+	<h3>1.0.0</h3>
+	<ul><li>Initial release</li></ul>
+</main>
+</body>
+</html>
