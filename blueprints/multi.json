@@ -2,7 +2,8 @@
   "$schema": "https://playground.wordpress.net/blueprint-schema.json",
   "meta": {
     "title": "Tradewell Multi-trade demo",
-    "author": "Tradewell Themes"
+    "author": "ProsperTechnology",
+    "description": "Tradewell by Prosper Technologies"
   },
   "landingPage": "/",
   "preferredVersions": {
@@ -38,7 +39,8 @@
     },
     {
       "step": "runPHP",
-      "code": "<?php require '/wordpress/wp-load.php'; delete_transient( 'twleads_activation_redirect' ); twleads_run_setup( 'multi', array( 'business_name' => 'Tradewell Home Services', 'phone' => '(555) 010-0199', 'city' => 'Springfield' ) ); flush_rewrite_rules();"
+      "code": "<?php require '/wordpress/wp-load.php'; wp_set_current_user( 1 ); delete_transient( 'twleads_activation_redirect' ); twleads_run_setup( 'multi', array( 'business_name' => 'Tradewell Home Services', 'phone' => '(555) 010-0199', 'city' => 'Springfield' ) ); flush_rewrite_rules(); $header = '/wordpress/wp-content/themes/tradewell/parts/header.html'; file_put_contents( $header, str_replace( 'href=\"/#quote\"', 'href=\"' . esc_url( home_url( '/#quote' ) ) . '\"', file_get_contents( $header ) ) ); wp_set_current_user( 0 );"
     }
-  ]
+  ],
+  "login": false
 }
